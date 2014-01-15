@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="com.bitscopic.downstream.DashboardSvc" CodeBehind="DashboardSvc.svc.cs" %>

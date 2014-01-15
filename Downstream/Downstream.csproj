@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E68A4E8C-98E9-4ABC-8729-B2CE7C9D535B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.bitscopic.downstream</RootNamespace>
+    <AssemblyName>Downstream</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mdo, Version=2.9.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>resources\lib\mdo\mdo.dll</HintPath>
+    </Reference>
+    <Reference Include="NCrontab">
+      <HintPath>resources\lib\ncrontab\NCrontab.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>resources\lib\newtonsoft\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\compression\gzip\GZip.cs" />
+    <Compile Include="src\config\AppConfigSettingsConstants.cs" />
+    <Compile Include="src\config\PackageTranslator.cs" />
+    <Compile Include="src\dao\file\FileDao.cs" />
+    <Compile Include="src\dao\file\FileDaoFactory.cs" />
+    <Compile Include="src\dao\file\IFileDao.cs" />
+    <Compile Include="src\dao\file\NetworkFileDao.cs" />
+    <Compile Include="src\dao\sql\BaseSqlDao.cs" />
+    <Compile Include="src\dao\sql\ISqlDao.cs" />
+    <Compile Include="src\dao\sql\PLSqlDao.cs" />
+    <Compile Include="src\dao\sql\SqlConnectionFactory.cs" />
+    <Compile Include="src\dao\sql\SqlDaoFactory.cs" />
+    <Compile Include="src\dao\sql\SqlParameterFactory.cs" />
+    <Compile Include="src\dao\sql\TSqlDao.cs" />
+    <Compile Include="src\dao\vista\IVistaDao.cs" />
+    <Compile Include="src\dao\vista\MdoVistaDao.cs" />
+    <Compile Include="src\dao\vista\MockVistaDao.cs" />
+    <Compile Include="src\dao\vista\MockVistaDaoImpl.cs" />
+    <Compile Include="src\dao\vista\VistaDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\dao\vista\VistaDaoFactory.cs" />
+    <Compile Include="src\dao\vista\VistaDaoImpl.cs" />
+    <Compile Include="src\dao\vista\VistaDaoUtils.cs" />
+    <Compile Include="src\dao\vista\VistaIenSeeder.cs" />
+    <Compile Include="src\dao\vista\WcfVistaDao.cs" />
+    <Compile Include="src\domain\data\Tree.cs" />
+    <Compile Include="src\domain\enum\EtlBatchStage.cs" />
+    <Compile Include="src\domain\enum\EtlBatchStatus.cs" />
+    <Compile Include="src\domain\EtlDownstreamMapItem.cs" />
+    <Compile Include="src\domain\EtlDownstreamStage.cs" />
+    <Compile Include="src\domain\exception\BinarySearchException.cs" />
+    <Compile Include="src\domain\exception\DownstreamTransactionException.cs" />
+    <Compile Include="src\domain\exception\LastPatientIenFromAuditException.cs" />
+    <Compile Include="src\domain\exception\NoDataInSiteAndFileException.cs" />
+    <Compile Include="src\domain\QueryResults.cs" />
+    <Compile Include="src\domain\reporting\Exceptional.cs" />
+    <Compile Include="src\domain\reporting\OrchestratorReport.cs" />
+    <Compile Include="src\domain\exception\DownstreamException.cs" />
+    <Compile Include="src\domain\Extractor.cs" />
+    <Compile Include="src\domain\ExtractorConfiguration.cs" />
+    <Compile Include="src\domain\reporting\ExtractorReport.cs" />
+    <Compile Include="src\domain\PortNumberGenerator.cs" />
+    <Compile Include="src\domain\reporting\Report.cs" />
+    <Compile Include="src\domain\reporting\ThreadSafeReport.cs" />
+    <Compile Include="src\domain\svc\AbstractTO.cs" />
+    <Compile Include="src\domain\svc\BoolTO.cs" />
+    <Compile Include="src\domain\svc\DictionaryTO.cs" />
+    <Compile Include="src\domain\svc\EtlDownstreamMapItemTO.cs" />
+    <Compile Include="src\domain\svc\EtlDownstreamStageTO.cs" />
+    <Compile Include="src\domain\svc\ExtractorArray.cs" />
+    <Compile Include="src\domain\svc\ExtractorConfigurationTO.cs" />
+    <Compile Include="src\domain\svc\ExtractorTO.cs" />
+    <Compile Include="src\domain\svc\QueryConfigurationTO.cs" />
+    <Compile Include="src\domain\svc\QueryConfigurationTreeTO.cs" />
+    <Compile Include="src\domain\svc\ReportTO.cs" />
+    <Compile Include="src\domain\svc\TextArray.cs" />
+    <Compile Include="src\domain\svc\TextTO.cs" />
+    <Compile Include="src\domain\ServiceState.cs" />
+    <Compile Include="src\domain\ThreadSafeExtractorList.cs" />
+    <Compile Include="src\domain\ThreadSafeWorkStack.cs" />
+    <Compile Include="src\domain\transaction\ITxAction.cs" />
+    <Compile Include="src\domain\VistaQuery.cs" />
+    <Compile Include="src\logging\Log.cs" />
+    <Compile Include="src\net\http\HttpClient.cs" />
+    <Compile Include="src\net\MessageTO.cs" />
+    <Compile Include="src\net\Client.cs" />
+    <Compile Include="src\net\Server.cs" />
+    <Compile Include="src\net\utils\IPv4Helper.cs" />
+    <Compile Include="src\net\utils\RequestHandler.cs" />
+    <Compile Include="src\service\IService.cs" />
+    <Compile Include="src\service\AbstractService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\testing\AssertionGenerator.cs" />
+    <Compile Include="src\testing\MockDataReader.cs" />
+    <Compile Include="src\testing\TestCategoryConstants.cs" />
+    <Compile Include="src\utils\BinarySearchUtil.cs" />
+    <Compile Include="src\utils\DataCleaningUtils.cs" />
+    <Compile Include="src\utils\DataTableUtils.cs" />
+    <Compile Include="src\utils\DateUtils.cs" />
+    <Compile Include="src\utils\ImpersonatorUtils.cs" />
+    <Compile Include="src\utils\LabChemUtils.cs" />
+    <Compile Include="src\utils\MD5Hasher.cs" />
+    <Compile Include="src\utils\QueryResultsUtils.cs" />
+    <Compile Include="src\utils\SqlUtils.cs" />
+    <Compile Include="src\utils\StringUtils.cs" />
+    <Compile Include="src\utils\ThreadUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="resources\lib\" />
+    <Folder Include="src\workflow\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\xml\VhaSites.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

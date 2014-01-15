@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Microsoft Visual Studio 2010 Web Deployment Project 
+  http://go.microsoft.com/fwlink/?LinkID=104956
+
+-->
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{084E98EF-E0F8-4CD3-B0A5-C577596BB9AD}</ProjectGuid>
+    <SourceWebPhysicalPath>..\DownstreamDashboard</SourceWebPhysicalPath>
+    <SourceWebProject>{D02D0B0B-1C75-49B3-B65D-847518F41E43}|DownstreamDashboard\DownstreamDashboard.csproj</SourceWebProject>
+    <SourceWebVirtualPath>/DownstreamDashboard.csproj</SourceWebVirtualPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\Debug</OutputPath>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>DownstreamDashboard.csproj_deploy</SingleAssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\Release</OutputPath>
+    <EnableUpdateable>true</EnableUpdateable>
+    <UseMerge>true</UseMerge>
+    <SingleAssemblyName>DownstreamDashboard.csproj_deploy</SingleAssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DownstreamDashboard\DownstreamDashboard.csproj">
+      <Project>{D02D0B0B-1C75-49B3-B65D-847518F41E43}</Project>
+      <Name>DownstreamDashboard</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WebDeployment\v10.0\Microsoft.WebDeployment.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.WebDeployment.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="BeforeMerge">
+  </Target>
+  <Target Name="AfterMerge">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
